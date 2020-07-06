@@ -4,6 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap-sass', '3.4.1'
+gem 'bcrypt', '3.1.13'
+gem 'sqlite3', '~> 1.4'
+gem "gon" 
+gem "sprockets", "~> 3.7.2" 
+gem 'annotate'
 gem 'rails', '6.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
@@ -19,6 +26,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'annotate'
+gem 'activeadmin'
+gem 'will_paginate', '>= 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
