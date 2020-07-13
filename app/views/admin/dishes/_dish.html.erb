@@ -1,0 +1,7 @@
+<%= form_for [:admin, @category, @dish] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name,class: 'form-control' %> %>
+	<%= f.label :money %>
+	<%= f.text_field :money,class: 'form-control' %> %>
+	<%= f.submit "Update dish", class: "btn btn-primary" %>
+<% end %>  
