@@ -16,7 +16,7 @@ class Admin::CategoriesController < Admin::BaseController
        @category = Category.new(category_params)
         if @category.save
             flash[:success] = "Create Category"
-            redirect_to admin_categories_path(@category)
+            redirect_to admin_categories_path
             else 
                 flash[:success] = "Register failed"
                 render 'new'

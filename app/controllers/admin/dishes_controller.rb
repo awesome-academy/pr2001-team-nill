@@ -23,6 +23,7 @@ class Admin::DishesController < Admin::BaseController
             render 'new'
         end
     end
+    #tao menu_dish dung nest attribute
     # GET /admin/categories/1/edit
     def edit
     end
@@ -40,13 +41,11 @@ class Admin::DishesController < Admin::BaseController
     def destroy
     @dish.destroy
     flash[:success] = 'Dish deleted!'
-    redirect_to admin_category_tours_url(@category)
+    redirect_to admin_category_dishes_url(@category)
     end
     private
     def set_dish
         @dish = Dish.find(params[:id])
-
-		
     end
     def dish_params
         params.require(:dish).permit(:name,:money)

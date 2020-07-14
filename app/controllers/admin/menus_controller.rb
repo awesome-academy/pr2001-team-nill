@@ -16,7 +16,7 @@ class Admin::MenusController < Admin::BaseController
        @menu = Menu.new(menu_params)
         if @menu.save
             flash[:success] = "Create Menu"
-            redirect_to admin_menus_path(@menu)
+            redirect_to admin_menus_path
             else 
                 flash[:success] = "Register failed"
                 render 'new'

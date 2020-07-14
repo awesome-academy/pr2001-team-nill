@@ -4,6 +4,6 @@ class Dish < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :booking_dishes
-  default_scope -> { order(created_at: :desc) }
+  scope :sort_by_created_at, ->{order created_at: :desc}
   validates :category_id , presence: true
 end
