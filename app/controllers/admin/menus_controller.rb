@@ -18,7 +18,7 @@ class Admin::MenusController < Admin::BaseController
             flash[:success] = "Create Menu"
             redirect_to admin_menus_path
             else 
-                flash[:success] = "Register failed"
+                flash[:danger] = "Register failed"
                 render 'new'
         end
     end
@@ -31,7 +31,7 @@ class Admin::MenusController < Admin::BaseController
             flash[:success] = "Menu was successfully updated."
             redirect_to admin_menus_url
         else
-            flash[:success] = "Menu was not successfully updated."
+            flash[:danger] = "Menu was not successfully updated."
             render 'edit'
         end
     end

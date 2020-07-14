@@ -18,7 +18,7 @@ class Admin::CategoriesController < Admin::BaseController
             flash[:success] = "Create Category"
             redirect_to admin_categories_path
             else 
-                flash[:success] = "Register failed"
+                flash[:danger] = "Register failed"
                 render 'new'
         end
     end
@@ -31,7 +31,7 @@ class Admin::CategoriesController < Admin::BaseController
             flash[:success] = "Category was successfully updated."
             redirect_to admin_categories_url
         else
-            flash[:success] = "Category was not successfully updated."
+            flash[:danger] = "Category was not successfully updated."
             render 'edit'
         end
     end

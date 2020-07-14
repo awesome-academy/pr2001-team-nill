@@ -19,7 +19,7 @@ class Admin::DishesController < Admin::BaseController
             flash[:success] = "Dish Category"
             redirect_to admin_category_dishes_path(@category)
         else 
-            flash[:success] = "Register failed"
+            flash[:danger] = "Register failed"
             render 'new'
         end
     end
@@ -33,7 +33,7 @@ class Admin::DishesController < Admin::BaseController
             flash[:success] = "Dish was successfully updated."
             redirect_to admin_category_dishes_path(@category)
         else
-            flash[:success] = "Dish was not successfully updated."
+            flash[:danger] = "Dish was not successfully updated."
             render 'edit'
         end
     end
