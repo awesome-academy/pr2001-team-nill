@@ -1,0 +1,16 @@
+<% provide(:title, 'All categories') %>
+<h1>All categories</h1>
+<%= will_paginate %>
+<table class="table">
+	<tr>
+		<th>Name</th>
+	</tr>
+<% @categories.each do |category| %>
+<tr>
+<td>
+	<%= link_to category.name, admin_category_path(category) %>
+</td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate %>

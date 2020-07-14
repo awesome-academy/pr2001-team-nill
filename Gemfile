@@ -8,16 +8,17 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'annotate'
 gem 'bcrypt', '3.1.13'
-gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '3.4.1'
-gem 'gon'
 gem 'rails', '6.0.0'
 gem 'rubocop', '~> 0.46.0', require: false
 gem 'sprockets', '~> 3.7.2'
 gem 'sqlite3', '~> 1.4'
 # Use sqlite3 as the database for Active Record
 gem 'bundler', '2.1.4'
-gem 'sqlite3', '~> 1.4'
+
+gem 'will_paginate',  '3.1.8'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -30,7 +31,6 @@ gem 'turbolinks', '~> 5'
 gem 'activeadmin'
 gem 'annotate'
 gem 'jbuilder', '~> 2.7'
-gem 'will_paginate', '>= 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
