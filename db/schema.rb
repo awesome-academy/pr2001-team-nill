@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_626_091_938) do
+ActiveRecord::Schema.define(version: 2_020_200_626_085_955) do
   create_table 'bills', force: :cascade do |t|
     t.integer 'cost_price'
     t.integer 'table_id', null: false
@@ -68,11 +66,19 @@ ActiveRecord::Schema.define(version: 20_200_626_091_938) do
   create_table 'dishes', force: :cascade do |t|
     t.string 'name'
     t.integer 'money'
-    t.string 'image_dish'
+    t.string 'image'
     t.integer 'category_id', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['category_id'], name: 'index_dishes_on_category_id'
+  end
+
+  create_table 'images', force: :cascade do |t|
+    t.integer 'dish_id', null: false
+    t.string 'link'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['dish_id'], name: 'index_images_on_dish_id'
   end
 
   create_table 'menu_dishes', force: :cascade do |t|
@@ -128,6 +134,7 @@ ActiveRecord::Schema.define(version: 20_200_626_091_938) do
   add_foreign_key 'comments', 'dishes'
   add_foreign_key 'comments', 'users'
   add_foreign_key 'dishes', 'categories'
+  add_foreign_key 'images', 'dishes'
   add_foreign_key 'menu_dishes', 'dishes'
   add_foreign_key 'menu_dishes', 'menus'
   add_foreign_key 'menus', 'dishes'

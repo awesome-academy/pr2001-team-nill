@@ -4,10 +4,9 @@
     <title>Pr2001_nill</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-    <%= Gon::Base.render_data %>
+   
   </head>
   <body>
    <%= render 'layouts/header'%>
@@ -16,6 +15,7 @@
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
 <%= yield %>
+</div>
 <%= render 'layouts/footer'%>
 </body>
 </html>
