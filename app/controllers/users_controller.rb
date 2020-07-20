@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -27,8 +28,8 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'edit'
+    end
   end
-end
 
   def create
     @user = User.new(user_params)
@@ -45,7 +46,7 @@ end
     User.find(params[:id]).destroy
     flash[:success] = 'User deleted'
     redirect_to users_url
-end
+  end
 
   private
 
@@ -64,7 +65,7 @@ end
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
-end
+  end
 
   def admin_user
     redirect_to(root_url) unless current_user.admin?

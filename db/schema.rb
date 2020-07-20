@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_091939) do
+ActiveRecord::Schema.define(version: 2020200626085955) do
 
   create_table "bills", force: :cascade do |t|
     t.integer "cost_price"
@@ -31,21 +31,31 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
     t.index ["dish_id"], name: "index_book_details_on_dish_id"
   end
 
-  create_table "book_tables", force: :cascade do |t|
-    t.integer "book_id", null: false
-    t.integer "table_id", null: false
+  create_table "booking_dishes", force: :cascade do |t|
+    t.integer "booking_id", null: false
+    t.integer "dish_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id"], name: "index_book_tables_on_book_id"
-    t.index ["table_id"], name: "index_book_tables_on_table_id"
+    t.index ["booking_id"], name: "index_booking_dishes_on_booking_id"
+    t.index ["dish_id"], name: "index_booking_dishes_on_dish_id"
   end
 
-  create_table "books", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name"
+  create_table "booking_tables", force: :cascade do |t|
+    t.integer "booking_id", null: false
+    t.integer "table_id", null: false
+    t.integer "person_bk"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_books_on_user_id"
+    t.index ["booking_id"], name: "index_booking_tables_on_booking_id"
+    t.index ["table_id"], name: "index_booking_tables_on_table_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "money"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -67,11 +77,19 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.integer "money"
-    t.string "image_dish"
+    t.string "image"
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_dishes_on_category_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "dish_id", null: false
+    t.string "link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dish_id"], name: "index_images_on_dish_id"
   end
 
   create_table "menu_dishes", force: :cascade do |t|
@@ -85,8 +103,10 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
 
   create_table "menus", force: :cascade do |t|
     t.string "name"
+    t.integer "dish_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dish_id"], name: "index_menus_on_dish_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -99,13 +119,14 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
   end
 
   create_table "tables", force: :cascade do |t|
-    t.string "name"
     t.string "status"
+    t.integer "person"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer "level"
     t.string "name"
     t.string "email"
     t.string "password_digest"
@@ -118,13 +139,17 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
   add_foreign_key "bills", "tables"
   add_foreign_key "book_details", "book_tables", column: "book_tables_id"
   add_foreign_key "book_details", "dishes"
-  add_foreign_key "book_tables", "books"
-  add_foreign_key "book_tables", "tables"
-  add_foreign_key "books", "users"
+  add_foreign_key "booking_dishes", "bookings"
+  add_foreign_key "booking_dishes", "dishes"
+  add_foreign_key "booking_tables", "bookings"
+  add_foreign_key "booking_tables", "tables"
+  add_foreign_key "bookings", "users"
   add_foreign_key "comments", "dishes"
   add_foreign_key "comments", "users"
   add_foreign_key "dishes", "categories"
+  add_foreign_key "images", "dishes"
   add_foreign_key "menu_dishes", "dishes"
   add_foreign_key "menu_dishes", "menus"
+  add_foreign_key "menus", "dishes"
   add_foreign_key "reviews", "users"
 end

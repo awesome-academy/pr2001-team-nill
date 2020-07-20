@@ -8,22 +8,30 @@ Rails.application.routes.draw do
   get 'book_table', to: 'static_pages#book_table'
   get 'menu', to: 'static_pages#menus'
   get 'signup', to: 'users#new'
-  resources :users
+  get 'reviews', to: 'reviews#show'
+  resources :users do
+    resources :reviews, only: %i[index show update]
+  end
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#logout'
+
   resource :sessions, only: %i[new create destroy]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :base
     resources :categories do 
-      resources :dishes
+    resources :dishes
     end
     resources :menus
     resources :tables
     resources :users
     resources :books
   end
-
+  resources :categories, only: %i[show index] do
+    resources :dishes
+  end
+  resources :dishes, only: [] do
+    resources :images, only: %i[new index create destroy]
+  end
 end
