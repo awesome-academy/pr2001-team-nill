@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) 
   end
 
   def new
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @categories = Category.all 
   end
 
   def update
@@ -45,7 +46,7 @@ end
     User.find(params[:id]).destroy
     flash[:success] = 'User deleted'
     redirect_to users_url
-end
+  end
 
   private
 
