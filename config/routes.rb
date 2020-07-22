@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   get 'book_table', to: 'static_pages#book_table'
   get 'menu', to: 'static_pages#menus'
   get 'signup', to: 'users#new'
-  resources :users
+  get 'reviews', to: 'reviews#show'
+  resources :users do
+    resources :reviews, only: %i[index show update]
+  end
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#logout'
-  resource :sessions, only: %i[new create destroy]
+  resources :categories, only: %i[show index] do
+    resources :dishes
+  end
+  resources :dishes, only: [] do
+    resources :images, only: %i[new index create destroy]
+  end
 end

@@ -5,7 +5,7 @@ class CreateDishes < ActiveRecord::Migration[6.0]
     create_table :dishes do |t|
       t.string :name
       t.integer :money
-      t.string :image_dish
+      t.string :images
       t.references :category, null: false, foreign_key: true
       t.timestamps
     end
