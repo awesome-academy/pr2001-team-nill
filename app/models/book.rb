@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Book < ApplicationRecord
-  has_many :booking_dishes
-  has_many :booking_tables
+  has_many :book_dishes
+  has_many :book_tables
 end

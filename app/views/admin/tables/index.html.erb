@@ -1,0 +1,16 @@
+<% provide(:title, 'All tables') %>
+<h1>All Tables</h1>
+<%= will_paginate %>
+<table class="table">
+	<tr>
+		<th>Name</th>
+	</tr>
+<% @tables.each do |table| %>
+<tr>
+<td>
+	<%= link_to table.name, admin_table_path(table) %>
+</td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate %>

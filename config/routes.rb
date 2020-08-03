@@ -14,4 +14,16 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#logout'
   resource :sessions, only: %i[new create destroy]
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :base
+    resources :categories do 
+      resources :dishes
+    end
+    resources :menus
+    resources :tables
+    resources :users
+    resources :books
+  end
+
 end
