@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save { self.email = email.downcase }
@@ -10,7 +8,8 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  has_many :reviews
+  has_many :comments
+  has_many :reviews,dependent: :destroy
   def self.digest(string)
     cost = if ActiveModel::SecurePassword.min_cost
              BCrypt::Engine::MIN_COST
@@ -37,5 +36,9 @@ end
 
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def feed
+    Review.where("user_id = ?", id)
   end
 end
