@@ -5,7 +5,6 @@ class CreateBookTables < ActiveRecord::Migration[6.0]
     create_table :book_tables do |t|
       t.references :book, null: false, foreign_key: true
       t.references :table, null: false, foreign_key: true
-      t.integer :person_bk
       t.timestamps
     end
   end
