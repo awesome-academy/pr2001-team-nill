@@ -12,7 +12,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '3.4.1'
 gem "chosen-rails"
 gem 'rails', '6.0.0'
-gem 'rubocop', '~> 0.46.0', require: false
+gem 'rubocop', '~> 0.48.1', require: false
 gem 'sprockets', '~> 3.7.2'
 gem 'sqlite3', '~> 1.4'
 # Use sqlite3 as the database for Acrailtive Record
