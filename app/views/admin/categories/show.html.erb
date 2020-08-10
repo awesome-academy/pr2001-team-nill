@@ -1,0 +1,13 @@
+<% provide(:title, @category.name) %>
+<div class="row">
+	<aside class="col-md-4">
+		<section>
+			<h1>
+				<%= @category.name %>
+				<% @dishes.each do |dish| %>
+					<%= render dish %>
+				<% end %>
+			</h1>
+		</section>
+	</aside>
+</div>

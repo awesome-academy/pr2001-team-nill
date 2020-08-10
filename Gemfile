@@ -10,12 +10,12 @@ gem 'annotate'
 gem 'bcrypt', '3.1.13'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '3.4.1'
-gem 'gon'
+gem "chosen-rails"
 gem 'rails', '6.0.0'
 gem 'rubocop', '~> 0.46.0', require: false
 gem 'sprockets', '~> 3.7.2'
 gem 'sqlite3', '~> 1.4'
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Acrailtive Record
 gem 'bundler', '2.1.4'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server

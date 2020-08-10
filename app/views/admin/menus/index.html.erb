@@ -1,0 +1,16 @@
+<% provide(:title, 'All menus') %>
+<h1>All Menus</h1>
+<%= will_paginate %>
+<table class="table">
+	<tr>
+		<th>Name</th>
+	</tr>
+	<% @menus.each do |menu| %>
+		<tr>
+			<td>
+				<%= link_to menu.name, admin_menu_path(menu) %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+<%= will_paginate %>
