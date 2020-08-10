@@ -9,13 +9,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-   <%= render 'layouts/header'%>
-<div class="container" style="margin-top: 22px;margin-left: 4px";>
-  <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-  <% end %>
-<%= yield %>
-</div>
-<%= render 'layouts/footer'%>
-</body>
+    <%= render 'layouts/header'%>
+    <div class="container" style="margin-top: 22px;margin-left: 4px";>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer'%>
+  </body>
 </html>
