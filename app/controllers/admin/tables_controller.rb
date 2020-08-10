@@ -41,6 +41,6 @@ class Admin::TablesController < Admin::BaseController
         @table = Table.find(params[:id])
     end
     def table_params
-        params.require(:table).permit(:name ,:status ,:person )
+        params.require(:table).permit(:name ,:status )
     end
 end

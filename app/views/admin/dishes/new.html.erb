@@ -1,13 +1,13 @@
 <% provide(:title, 'New Dish') %>
 <h1>Create dish</h1>
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-<%= form_for [:admin, @category , @dish] do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :money %>
-<%= f.number_field :money %>
-<%= f.submit "Create dish", class: "btn btn-primary" %>
-<% end %>
-</div>
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for [:admin, @category , @dish] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :money %>
+    <%= f.number_field :money %>
+    <%= f.submit "Create dish", class: "btn btn-primary" %>
+  <% end %>
+  </div>
 </div>

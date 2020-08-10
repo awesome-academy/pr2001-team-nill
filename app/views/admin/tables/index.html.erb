@@ -5,12 +5,10 @@
 	<tr>
 		<th>Name</th>
 	</tr>
-<% @tables.each do |table| %>
-<tr>
-<td>
-	<%= link_to table.name, admin_table_path(table) %>
-</td>
-</tr>
-<% end %>
+	<% @tables.each do |table| %>
+	`	<tr>
+			<%= link_to table.name, admin_table_path(table) %>
+		</tr>
+	<% end %>`
 </table>
 <%= will_paginate %>

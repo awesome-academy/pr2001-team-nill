@@ -5,10 +5,10 @@
 	<tr>
 		<th>Name</th>
 	</tr>
-	<% @categories.each do |category| %>
+	<% @menus.each do |menu| %>
 		<tr>
 			<td>
-				<%= link_to category.name, admin_category_path(category) %>
+				<%= link_to menu.name, admin_menu_path(menu) %>
 			</td>
 		</tr>
 	<% end %>
