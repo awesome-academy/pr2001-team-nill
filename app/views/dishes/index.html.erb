@@ -1,26 +1,13 @@
+
 <div class="Search" style="">
-
-<%= form_tag dishes_path, method: :get do %>
-   <tr> 
-   <td>
-   <%= text_field_tag :name, params[:name] %> 
-   </td>
-   <td> <%= select_tag :sort_by_created_at, options_for_select([['Decrease','ASC'],['Increase','DESC']])%> </td>
-    <%= submit_tag 'Search' %>  
-    </tr>
-  <%end%>     
+  <%= form_tag dishes_path, method: :get do %>
+      <%= text_field_tag :name, params[:name],placeholder: "Search" %> 
+      <%= select_tag :sort_by_created_at, options_for_select([['Decrease','ASC'],['Increase','DESC']])%>
+      <%= submit_tag 'Search' %>  
+    <%end%>     
 </div>
-
-<table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th>Img</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row">
     <%= render @dishes %>
-  </tbody>
-</table>
+  </div>
+</div>

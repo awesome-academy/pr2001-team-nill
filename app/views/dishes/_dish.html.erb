@@ -1,12 +1,4 @@
-<tr>
-  <div class="thead-dark">
-    <% image = dish.images.first&.link.present? ? dish.images.first.link : "about.png"%>
-    <td class="width-100"><%= image_tag image,class: "img-responsive" %></td>  
-    <td><%= dish.name %></td>
-    <td><%= dish.category.name %></td>
-    <td><%= dish.money %>$</td> 
-    <td><%= dish.images.first %></td> 
-
-    
-  </div>
-</tr>
+<div class="col-4">
+  <% image = dish.images.first&.link.present? ? dish.images.first.link : "about.png"%>
+  <div class="width-100"><%= image_tag image, class: "img-responsive" %></div>
+</div>
