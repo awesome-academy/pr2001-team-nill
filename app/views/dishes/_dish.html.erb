@@ -1,10 +1,12 @@
 <tr>
-  <div class="card">
+  <div class="thead-dark">
+    <% image = dish.images.first&.link.present? ? dish.images.first.link : "about.png"%>
+    <td class="width-100"><%= image_tag image,class: "img-responsive" %></td>  
     <td><%= dish.name %></td>
     <td><%= dish.category.name %></td>
-    <td><%= dish.money %>$</td>  
-    <td class="button"><%= button_to "Buy" %></td>
-    <td class="button"><%= button_to "Cart" %></td>
-    <td class="button"><%= button_to "Comment" %></td>
+    <td><%= dish.money %>$</td> 
+    <td><%= dish.images.first %></td> 
+
+    
   </div>
 </tr>

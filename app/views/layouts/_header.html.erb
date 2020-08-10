@@ -6,8 +6,6 @@
                         <a class="navbar-brand" href="<%= root_path %>">
                           <%= image_tag "logo.png" %>
                         </a>
-                        
-
                         <div class="collapse navbar-collapse main-menu-item justify-content-end"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -30,7 +28,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" <li><%= link_to "Profile", current_user %></a>
-                                    <a class="dropdown-item" <li><%= liink_to "Settings", edit_user_path(current_user) %> </a>
+                                    <a class="dropdown-item" <li><%= link_to "Settings", edit_user_path(current_user) %> </a>
                                      <a class="dropdown-item"<%= link_to "Log out",logout_path, method: :delete %> </a>
 
                                     </div>

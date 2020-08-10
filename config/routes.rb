@@ -31,7 +31,11 @@ Rails.application.routes.draw do
   resources :categories, only: %i[show index] do
     resources :dishes
   end
-  resources :dishes, only: [] do
+  resources :dishes do
     resources :images, only: %i[new index create destroy]
+  end
+
+  namespace :search do
+    resources :dishes, only: :index
   end
 end
