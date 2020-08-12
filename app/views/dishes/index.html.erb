@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <% @dishes.each do |dish| %>
+      <div class="col-md-3">
+        <%= render 'dish' , dish: dish%> 
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

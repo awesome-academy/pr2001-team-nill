@@ -10,9 +10,12 @@ gem 'annotate'
 gem 'bcrypt', '3.1.13'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '3.4.1'
-gem "chosen-rails"
+gem 'carrierwave'
+gem 'chosen-rails'
+gem 'fake'
+gem 'gon'
 gem 'rails', '6.0.0'
-gem 'rubocop', '~> 0.46.0', require: false
+gem 'rubocop', require: false
 gem 'sprockets', '~> 3.7.2'
 gem 'sqlite3', '~> 1.4'
 # Use sqlite3 as the database for Acrailtive Record
@@ -26,6 +29,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'pry-rails', :group => :development
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'activeadmin'
 gem 'annotate'
@@ -40,8 +44,6 @@ gem 'will_paginate', '>= 3.0'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

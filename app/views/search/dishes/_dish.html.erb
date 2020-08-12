@@ -1,0 +1,10 @@
+<div class="col--4">
+  <div class="dish <%= dish.id %>">
+  	<%= link_to  dish_path(dish) do %>
+    	<%= image_tag(dish.images.sample&.link_url.to_s, class:"img-thumbnail") %>
+    <% end %>
+	  <div class="list-dish" style="text-align: center;">
+	     <h4> <%= link_to "#{dish.name}", dish_path(dish) %> </h4>
+	  </div>
+   </div>
+</div>

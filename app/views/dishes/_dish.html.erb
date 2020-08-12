@@ -1,0 +1,5 @@
+<div class="dish <%= dish.id %>">
+      <%= image_tag(dish.images.sample&.link_url.to_s, class:"img-fix") %>  
+      <h4 style="text-align: center;"><%= link_to "#{dish.name}", dish_path(dish) %> </h4>
+</div> 
+  

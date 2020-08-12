@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
 class Comment < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
   belongs_to :dish
 end

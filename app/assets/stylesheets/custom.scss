@@ -40,14 +40,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -56,7 +54,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+  
   line-height: 1.7em;
 }
 
@@ -65,7 +63,7 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -103,21 +101,9 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
-
-/* sidebar */
 
 aside {
   section.user_info {
@@ -127,8 +113,10 @@ aside {
     padding: 10px 0;
     margin-top: 20px;
     &:first-child {
+      text-align:center;
       border: 0;
       padding-top: 0;
+      padding-right: 300px;
     }
     span {
       display: block;
@@ -136,7 +124,7 @@ aside {
       line-height: 1;
     }
     h1 {
-      font-size: 1.4em;
+      
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
@@ -194,31 +182,16 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
+
+
+.input{
+  height: 33px !important;
+  width: 150px;
 }
 
-input {
-  height: auto !important;
-}
 
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
+
 
 /* Users index */
 
@@ -252,10 +225,7 @@ input {
   .content {
     display: block;
     margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
+   
   }
   .timestamp {
     color: $gray-light;
@@ -276,12 +246,7 @@ aside {
   }
 }
 
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
-}
+
 .stats {
 overflow: auto;
 margin-top: 0;
@@ -342,14 +307,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -358,7 +323,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+
   line-height: 1.7em;
 }
 
@@ -367,8 +332,8 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
+  
+  color: black;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -442,7 +407,6 @@ aside {
       line-height: 1;
     }
     h1 {
-      font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
@@ -451,14 +415,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
 
 .stats {
   overflow: auto;
@@ -483,51 +439,10 @@ aside {
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
+.input{
+  height: 33px !important;
+  width: 150px;
 }
-
-.users.follow {
-  padding: 0;
-}
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
-
-/* Users index */
-
 .users {
   list-style: none;
   margin: 0;
@@ -558,10 +473,7 @@ input {
   .content {
     display: block;
     margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
+      
   }
   .timestamp {
     color: $gray-light;
@@ -588,159 +500,17 @@ span.picture {
     border: 0;
   }
 }
-@mixin box_sizing {
-  -moz-box-sizing:
-  border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:
-  border-box;
-  }
-  .debug_dump {
-    clear: both;
-    float: left;
-    width: 100%;
-    margin-top: 45px;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    }
-    .checkbox{
-      margin-top: -10px;
-      margin-bottom: 10px;
-      span {
-        margin-left: 20px;
-        font-weight: normal;
-        }
-    }
-    #session_remember_me {
-      width: auto;
-      margin-left: 0;
-      }
-      .users {
-        list-style: none;
-        margin: 0;
-        li {
-        overflow: auto;
-        padding: 10px 0;
-        border-bottom: 1px solid $gray-lighter;
-        }
-        }
-        .microposts {
-          list-style: none;
-          padding: 0;
-          li {
-          padding: 10px 0;
-          border-top: 1px solid #e8e8e8;
-          }
-          .user {
-          margin-top: 5em;
-          padding-top: 0;
-          }
-          .content {
-          display: block;
-          margin-left: 60px;
-          img {
-          display: block;
-          padding: 5px 0;
-          }
-          }
-          .timestamp {
-          color: $gray-light;
-          display: block;
-          margin-left: 60px;
-          }
-          .gravatar {
-          float: left;
-          margin-right: 10px;
-          margin-top: 5px;
-          }
-          }
-          aside {
-          textarea {
-          height: 100px;
-          margin-bottom: 5px;
-          }
-          }
-          span.image {
-          margin-top: 10px;
-          input {
-          border: 0;
-          }
-          }
-          .gravatar {
-            float: left;
-            margin-right: 10px;
-            }
-            .gravatar_edit {
-            margin-top: 15px;
-            }
-            .stats {
-              overflow: auto;
-              margin-top: 0;
-              padding: 0;
-              a {
-              float: left;
-              padding: 0 10px;
-              border-left: 1px solid $gray-lighter;
-              color: gray;
-              &:first-child {
-              padding-left: 0;
-              border: 0;
-              }
-              &:hover {
-              text-decoration: none;
-              color: blue;
-              }
-              }
-              strong {
-              display: block;
-              }
-              }
-              .user_avatars {
-              overflow: auto;
-              margin-top: 10px;
-              .gravatar {
-              margin: 1px 1px;
-              }
-              a {
-              padding: 0;
-              }
-            }
-            .users.follow {
-            padding: 0;
-            }
-            .stats {
-              overflow: auto;
-              margin-top: 0;
-              padding: 0;
-              a {
-              float: left;
-              padding: 0 10px;
-              border-left: 1px solid $gray-lighter;
-              color: gray;
-              &:first-child {
-              padding-left: 0;
-              border: 0;
-              }
-              &:hover {
-              text-decoration: none;
-              color: blue;
-              }
-              }
-              strong {
-              display: block;
-              }
-              }
-              .user_avatars {
-              overflow: auto;
-              margin-top: 10px;
-              .gravatar {
-              margin: 1px 1px;
-              }
-              a {
-              padding: 0;
-              }
-            }
-            .users.follow {
-            padding: 0;
-            }
+
+
+/*image dish table*/
+
+.width-100 {
+  width: 100px;
+}
+header,footer {
+    display: block;
+    background: antiquewhite;
+}
+.img{
+  width: 50px;
+}

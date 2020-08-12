@@ -1,6 +1,6 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: white;
+  color: #319;
   margin: 33px; }
 
 body, p, ol, ul, td {
@@ -17,11 +17,11 @@ a {
   color: #000; }
 
 a:visited {
-  color: black; }
+  color: #black; }
 
 a:hover {
   color: #fff;
-  background-color: #000; }
+  background-color: bisque; }
 
 th {
   padding-bottom: 5px; }
@@ -41,12 +41,7 @@ div.actions {
   background-color: red;
   display: table; }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0; }
+
 
 #error_explanation h2 {
   text-align: left;
@@ -63,3 +58,6 @@ div.actions {
 
 label {
   display: block; }
+.footer-area{
+  background-color:cornsilk;
+}

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def logout
+  def destroy
     log_out
     redirect_to root_url
   end
