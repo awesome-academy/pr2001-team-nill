@@ -1,27 +1,24 @@
-<div class="text">
-  <div class="img-1" style="float: right; width: 50%; height: 50%;">
-    <img src="assets/root.jpg">
-  </div>
-
-  <div class="col-sm-8 col-lg-4">
-    <div class="about_text" style="text-align:center ;float: left; ">
-      <h2>Where The Food’s As Good As The Root Beer.</h2>
+<div class="container-fluid">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "root1.jpg",  class: 'd-block w-100' %>
+      </div>
     </div>
   </div>
-</div>  
-  <!-- <div class="container">   
-  <table class="table table-bordered">
-
-     <thead class="thead-dark">
-      <tr>
-        <th>Img</th>
-        <th>Name</th>
-        <th>Category</th> 
-        <th>Price</th>
-    
-      </tr>
-      </thead>
-    <tbody><%= render @dishes %></tbody>
-    </table>
+<div class="container-fluid">
+<h1 style="text-align:center; ">Dish</h1>
+  <div class="row">
+    <% @dishes.each do |dish|%>
+      <div class="col-md-3">
+        <div class="dish <%= dish.id %>">
+            <%= image_tag(dish.images.sample&.link_url.to_s, class:"img-fix") %>  
+            <h4 style="text-align: center;"><%= link_to "#{dish.name}", dish_path(dish) %> </h4>
+        </div>
+      </div>  
+    <% end %>            
   </div>
-   -->
+</div>
+
+</body>
+</html>

@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     @categories = Category.all
     @dishes = Dish.all
+    
   end
 
   def chefs
@@ -12,9 +13,7 @@ class StaticPagesController < ApplicationController
 
   def menus; end
 
-  def reviews
-   
-  end
+  def reviews; end
 
   def book_table; end
 end

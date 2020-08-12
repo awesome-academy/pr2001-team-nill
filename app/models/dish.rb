@@ -3,14 +3,14 @@ class Dish < ApplicationRecord
   has_many :comments
   has_many :menu_dishes, dependent: :destroy
   has_many :menus, through: :menu_dishes
-  has_many :images
+  has_many :images, dependent: :destroy
   mount_uploader :image, ImageUploader
-  
-  scope :search_name, ->(name) do 
+  accepts_nested_attributes_for :images
+  scope :search_name, lambda { |name|
     where("name LIKE '%#{name}%'")
-  end
+  }
 
-  scope :order_by_created_at, ->(sort_key) do
+  scope :order_by_created_at, lambda { |sort_key|
     order(created_at: sort_key)
-  end
+  }
 end

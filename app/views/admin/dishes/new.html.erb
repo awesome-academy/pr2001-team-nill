@@ -7,7 +7,15 @@
     <%= f.text_field :name %>
     <%= f.label :money %>
     <%= f.number_field :money %>
-    <%= f.submit "Create dish", class: "btn btn-primary" %>
+    <%= f.submit "Create dish", class: "btn btn-primary" %>0
+     <h5>Add images for Dish</h5>
+
+        <% 2.times do |i|%>
+            <%= f.fields_for :images, @dish.images.new do |ff|%>
+                <%= ff.file_field :link %>
+            <% end %>
+        <% end %>
+        
   <% end %>
   </div>
 </div>

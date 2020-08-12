@@ -13,39 +13,42 @@
                                 <li><%= link_to "Home", root_path %></li></a>
                                 </li>
                                 <li class="nav-item">
-                                 <li>
                                     <%= link_to "Category", categories_path %>  </a>
-                                    </li>
-                                </li>
-                                <li class="nav-item">
-                                    
-                                        <li><%= link_to "Reviews", reviews_path %></li></a>
-                                </li>
-
+                                </li>                                                      
                                 <% if logged_in? %>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b> 
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account 
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" <li><%= link_to "Profile", current_user %></a>
-                                    <a class="dropdown-item" <li><%= liink_to "Settings", edit_user_path(current_user) %> </a>
-                                     <a class="dropdown-item"<%= link_to "Log out",logout_path, method: :delete %> </a>
+                                    <a class="dropdown-item" <li><%= link_to "Settings", edit_user_path(current_user) %> </a>
+                                     <a class="dropdown-item"<%= link_to "Log out",logout_path, method: :delete %></a>
 
                                     </div>
-                                      
+
                                 </li>
-                                <div class="menu_btn">
-                                  <a href="#" class="btn_1 d-none d-sm-block">book a tabel</a>
-                                     </div>
+                                
                               
                             </ul>
                         </div>
                         
                         <% else %>
+
                           <li>
                             <%= link_to "Log in", login_path %>
                           </li>
                       <% end %>
-                    
-    </header>
+                      <div class="navbar-nav" style="">
+                          <div class="search">
+                          <%= form_tag search_dishes_path, class:"form-inline my-2 my-lg-0", method: :get do %>
+                              <%= text_field_tag :name, params[:name],class:"form-control mr-sm-2",placeholder: "Search" %>
+                                 <button class="btn btn-info" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>            
+                            <%end%>       
+                          </div>
+                        </div>
+
+</header>
+   
    

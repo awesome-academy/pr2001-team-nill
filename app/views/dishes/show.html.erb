@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <aside class="col-md-8">
+      <section class="info-dish"> 
+        <h2>
+
+        </h2>
+        <div class="image-belongto-dish">
+          <%= image_tag(@dish.images.sample&.link_url.to_s, class:"img-thumbnail") %>
+
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>User name</th>
+              <th>Content</th>   
+            </tr>
+          </thead>
+          <tbody> 
+            <% @dish.comments.each do |comment| %>
+              <tr class="success">
+                <td><h4><%= comment.user.name %></h4></td>
+                <td><h4><%= comment.contents%></h4><td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <% if logged_in?%>
+          <%= render 'comment', comment: @comment%>
+        <% end %>
+      </section>
+    </aside>
+    <aside class="col-md-4">
+      <section class="dish-details">
+        <h1> <%= @dish.name%></h1>
+        <h3 class="price">PRICE:<%= @dish.money %>$</h3>
+       
+      </section> 
+    </aside>
+  </div>
+</div>

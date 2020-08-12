@@ -26,15 +26,6 @@
 .table-bordered > tfoot > tr > td {
   border: 1px solid #ddd;
 }
-.Search{
-
-    top: 200%;
-    float:right;
-    display: block;
-    width: 26%;
-    margin: auto;
-    padding: 27px;
-}
 .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -165,10 +156,7 @@ a {
     --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
-img {
-    vertical-align: middle;
-    border-style: none;
-}
+
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
     color: rgba(0,0,0,.9);
 }
@@ -218,3 +206,6 @@ a:hover {
   float: left;
 }
 
+.dish-details{
+    border-top: 2px solid #ff0000;
+}

@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :comments
   has_many :reviews, dependent: :destroy
-  
+
   def self.digest(string)
     cost = if ActiveModel::SecurePassword.min_cost
              BCrypt::Engine::MIN_COST
@@ -41,6 +41,6 @@ class User < ApplicationRecord
   end
 
   def feed
-    Review.where("user_id = ?", id)
+    Review.where('user_id = ?', id)
   end
 end
