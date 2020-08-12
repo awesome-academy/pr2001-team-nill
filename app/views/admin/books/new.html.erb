@@ -1,0 +1,19 @@
+<% provide(:title, 'New Book') %>
+<h1>Create book</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="form-group">
+			<%= form_for [:admin, @user , @book] do |f| %>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+				<%= f.label :table_id %>
+				<%= f.select :table_ids, options_for_select(@tables.map{|key, value|
+					[key, value]}), {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
+					<%= f.label :dish_id %>
+				<%= f.select :dish_ids, options_for_select(@dishes.map{|key, value|
+					[key, value]}), {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
+				<%= f.submit "Create menu", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

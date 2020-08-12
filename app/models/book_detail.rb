@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BookTable < ApplicationRecord
+class BookDetail < ApplicationRecord
   belongs_to :book, optional: true
-  belongs_to :table
+  belongs_to :dish
 end

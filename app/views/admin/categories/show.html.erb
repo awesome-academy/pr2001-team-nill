@@ -4,8 +4,8 @@
 		<section>
 			<h1>
 				<%= @category.name %>
-				<% @dishes.each do |dish| %>
-					<%= render dish %>
+				<% @category.dishes.each do |dish| %>
+					<%= dish.name %>
 				<% end %>
 			</h1>
 		</section>

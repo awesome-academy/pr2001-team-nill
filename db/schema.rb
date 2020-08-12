@@ -10,24 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_091939) do
-
-  create_table "bills", force: :cascade do |t|
-    t.integer "cost_price"
-    t.integer "table_id", null: false
-    t.date "bill_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["table_id"], name: "index_bills_on_table_id"
-  end
+ActiveRecord::Schema.define(version: 2020_08_10_130309) do
 
   create_table "book_details", force: :cascade do |t|
-    t.integer "book_tables_id", null: false
+    t.integer "book_id", null: false
     t.integer "dish_id", null: false
-    t.integer "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_tables_id"], name: "index_book_details_on_book_tables_id"
+    t.index ["book_id"], name: "index_book_details_on_book_id"
     t.index ["dish_id"], name: "index_book_details_on_dish_id"
   end
 
@@ -45,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cost", default: 0
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -115,8 +106,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_091939) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bills", "tables"
-  add_foreign_key "book_details", "book_tables", column: "book_tables_id"
+  add_foreign_key "book_details", "books"
   add_foreign_key "book_details", "dishes"
   add_foreign_key "book_tables", "books"
   add_foreign_key "book_tables", "tables"

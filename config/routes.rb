@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :base
     resources :categories do 
-      resources :dishes
+    resources :dishes
     end
     resources :menus
     resources :tables
-    resources :users
-    resources :books
+    resources :users do
+      resources :books
+    end
   end
-
 end

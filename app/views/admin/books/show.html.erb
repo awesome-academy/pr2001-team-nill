@@ -1,0 +1,13 @@
+<% provide(:title, @book.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= @book.name %>
+        <% @book.tables.each do |table| %>
+          <%= table.name %>
+        <%end%>     
+      </h1>
+    </section>
+  </aside>
+</div>
